@@ -18,6 +18,7 @@ Previously I created hashtables containing fake user data. But, since I need it 
 * [Installation](#Installation)
 * [Using the PSStuntman module](#Using-the-PSStuntman-module)
 * [Release Notes](Release-Notes)
+* [Contributing](Contributing)
 
 ## Prerequisites
 
@@ -28,7 +29,7 @@ N.B. If you are using _Windows Server 2016 / Windows 10_ or higer, Windows Power
 
 ## Installation
 
-1. Download the latest release. https://github.com/mufana/PSStuntman/releases/tag/v1.0.2
+1. Download the latest release. https://github.com/JeroenBl/PSStuntman/releases/download/1.0.2/1.0.2.zip
 
 2. Copy the files to location that makes sense.
 
@@ -172,11 +173,15 @@ Removes all data from the _Stuntman.db_ Sqlite database.
 | ----------- | -------------------------------------- |
 | _UserId_    | _Remove a stuntman by UserID_ |
 | _EmptyDatabase_    | _Removes all stuntman from the database_ |
-|
-
 
 ## Release history
 
 ### Version 1.0.2
 
 1.0.2  - Initial release
+
+## Contributing
+
+Find a bug or have an idea! Open an issue or submit a pull request!
+
+**Enjoy!**
