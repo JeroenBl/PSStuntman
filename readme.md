@@ -1,7 +1,7 @@
 # PSStuntman
 ## _because every app needs a stuntman_
 
-![image](https://raw.githubusercontent.com/JeroenBl/PSStuntman/main/assets/Logo.png)
+![image](https://raw.githubusercontent.com/JeroenBl/PSStuntman/main/assets/logo.png)
 
 There are many times where I need fake user data to test my applications or random stuff that I build.
 
