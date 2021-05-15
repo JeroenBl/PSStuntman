@@ -29,7 +29,7 @@ N.B. If you are using _Windows Server 2016 / Windows 10_ or higer, Windows Power
 
 ## Installation
 
-1. Download the latest release. https://github.com/JeroenBl/PSStuntman/releases/download/1.0.2/1.0.2.zip
+1. Download the latest release. https://github.com/JeroenBL/PSStuntman/releases/download/v1.0.3/1.0.3.zip
 
 2. Copy the files to location that makes sense.
 
@@ -48,6 +48,7 @@ The PSStuntman PSModule contains the following cmdlets:
 | _New-Stuntman_                 | _Creates new stuntman and has the option to save them to a SQlite database_ |
 | _Get-Stuntman_                 | _Retrieves the created stuntman from the SQlite database_    |
 | _Remove-Stuntman_ | _Removes all the stuntman from the SQlite database_          |
+| ConvertTo-Person | Converts a (or multiple) stuntman to a person |
 
 ---
 
@@ -174,7 +175,15 @@ Removes all data from the _Stuntman.db_ Sqlite database.
 | _UserId_    | _Remove a stuntman by UserID_ |
 | _EmptyDatabase_    | _Removes all stuntman from the database_ |
 
+## Cmdlet: ConvertTo-Person
+
+Converts a stuntman to a Person. 
+
 ## Release history
+
+### Version 1.0.3
+
+1.0.3  - Added cmdlet 'ConvertTo-Person'
 
 ### Version 1.0.2
 
