@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using PSStuntman.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -26,6 +27,17 @@ namespace PSStuntman.Cmdlets
         )]
         public string UserId { get; set; }
 
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Convert the stuntman to a person object"
+        )]
+        public SwitchParameter ConvertToPerson
+        {
+            get { return isConvertToPerson; }
+            set { isConvertToPerson = value; }
+        }
+        private bool isConvertToPerson;
+
         /// <summary>
         /// 
         /// </summary>
@@ -42,7 +54,15 @@ namespace PSStuntman.Cmdlets
                 }
                 else
                 {
-                    WriteObject(stuntman);
+                    if (isConvertToPerson)
+                    {
+                        var persons = ConvertToPersonModel(stuntman);
+                        WriteObject(persons);
+                    }
+                    else
+                    {
+                        WriteObject(stuntman);
+                    }
                 }
             }
             catch (Exception ex)
@@ -65,6 +85,64 @@ namespace PSStuntman.Cmdlets
                 WriteVerbose($"Retrieved {output.ToList().Count} Stuntman");
                 return output.ToList();
             }
+        }
+
+        private List<PersonModel> ConvertToPersonModel(List<StuntmanModel> stuntmanList)
+        {
+            List<PersonModel> persons = new List<PersonModel>();
+            foreach (var stuntman in stuntmanList)
+            {
+                persons.Add(new PersonModel
+                {
+                    PersonId = stuntman.UserId,
+                    DisplayName = stuntman.DisplayName,
+                    ExternalId = stuntman.ExternalId,
+
+                    Name = new PersonModel.NameModel
+                    {
+                        GivenName = stuntman.GivenName,
+                        FamilyName = stuntman.FamilyName,
+                        NickName = stuntman.GivenName
+                    },
+
+                    Details = new PersonModel.DetailsModel
+                    {
+                        BirthDate = stuntman.BirthDate,
+                        BirthPlace = stuntman.BirthPlace
+                    },
+                    
+                    Contact = new PersonModel.ContactModel
+                    {
+                        Business = new PersonModel.ContactModel.BusinessModel
+                        {
+                            Email = stuntman.BusinessEmailAddress,
+                            Phone = new PersonModel.ContactModel.BusinessModel.BusinessPhoneNumber
+                            {
+                                Fixed = stuntman.BusinessPhoneNumber
+                            }
+                        },
+
+                        Personal = new PersonModel.ContactModel.PersonalModel
+                        {
+                            Address = new PersonModel.ContactModel.PersonalModel.PersonalAddressModel
+                            {
+                                Street = stuntman.Street,
+                                HouseNumber = stuntman.HouseNumber,
+                                Locality = stuntman.City,
+                                PostalCode = stuntman.ZipCode
+                            },
+                            Email = stuntman.PersonalEmailAddress,
+                            Phone = new PersonModel.ContactModel.PersonalModel.PersonalPhoneModel
+                            {
+                                Fixed = stuntman.PersonalPhoneNumber
+                            }
+                        }
+                    }
+                    
+               });
+            }
+
+            return persons;
         }
     }
 }
