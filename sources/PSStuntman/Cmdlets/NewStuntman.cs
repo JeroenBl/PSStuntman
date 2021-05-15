@@ -135,7 +135,7 @@ namespace PSStuntman.Cmdlets
 
                     // User
                     .RuleFor(s => s.UserId, f => userId)
-                    .RuleFor(s => s.ExternalId, (f, s) => $"ST{userId}")
+                    .RuleFor(s => s.ExternalId, (f, s) => $"STUNTMAN{userId}")
                     .RuleFor(s => s.GivenName, f => f.Person.FirstName)
                     .RuleFor(s => s.FamilyName, f => f.Person.LastName)
                     .RuleFor(s => s.DisplayName, (f, s) => $"{s.GivenName} {s.FamilyName}")
