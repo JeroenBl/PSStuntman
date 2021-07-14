@@ -60,12 +60,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cmdlets\ConvertToPerson.cs" />
+    <Compile Include="Cmdlets\GetDepartment.cs" />
     <Compile Include="Cmdlets\GetStuntman.cs" />
     <Compile Include="Cmdlets\NewStuntman.cs" />
-    <Compile Include="Cmdlets\RemoveStuntman.cs" />
+    <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\StuntmanModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DepartmentService.cs" />
+    <Compile Include="Services\SqliteDataAccessService.cs" />
+    <Compile Include="Services\StuntmanService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

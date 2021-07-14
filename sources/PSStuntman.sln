@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSStuntman", "PSStuntman\PSStuntman.csproj", "{961BF12C-E305-4C45-A227-9CED54672C15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSStuntmanConsoleTest", "PSStuntmanConsoleTest\PSStuntmanConsoleTest.csproj", "{3EAF0267-9BDD-41A4-8D9F-FD60C4E05682}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{961BF12C-E305-4C45-A227-9CED54672C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{961BF12C-E305-4C45-A227-9CED54672C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{961BF12C-E305-4C45-A227-9CED54672C15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EAF0267-9BDD-41A4-8D9F-FD60C4E05682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EAF0267-9BDD-41A4-8D9F-FD60C4E05682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EAF0267-9BDD-41A4-8D9F-FD60C4E05682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EAF0267-9BDD-41A4-8D9F-FD60C4E05682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
