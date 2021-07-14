@@ -4,16 +4,10 @@ using System.Management.Automation;
 
 namespace PSStuntman.Cmdlets
 {
-    /// <summary>
-    /// Retrieve stuntman from Sqlite
-    /// </summary>
     [Cmdlet(VerbsData.ConvertTo, "Person")]
     [OutputType(typeof(PersonModel))]
     public class ConvertToPerson : PSCmdlet
     {
-        /// <summary>
-        /// Converts a stuntman to a person
-        /// </summary>
         [Parameter(
             Mandatory = false,
             HelpMessage = "Converts a stuntman to a person",

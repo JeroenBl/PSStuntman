@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PSStuntman.Cmdlets
+namespace PSStuntman.Models
 {
     /// <summary>
     /// The [User] model
