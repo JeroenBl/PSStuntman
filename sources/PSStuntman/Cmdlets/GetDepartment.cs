@@ -32,7 +32,7 @@ namespace PSStuntman.Cmdlets
             }
             catch (Exception ex)
             {
-                WriteError(new ErrorRecord(ex, "Could not retrieve stuntman", ErrorCategory.InvalidOperation, null));
+                WriteError(new ErrorRecord(ex, "Could not retrieve stuntman", ErrorCategory.NotSpecified, null));
             }
         }
     }

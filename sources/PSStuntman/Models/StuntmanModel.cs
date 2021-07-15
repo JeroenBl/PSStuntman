@@ -50,6 +50,7 @@ namespace PSStuntman.Models
         public int HoursPerWeek { get; set; }
         public string Company { get; set; }
         public string Department { get; set; }
+        public int DepartmentExternalId { get; set; }
         public string CostCenter { get; set; }
         public string ContractGuid { get; set; }
     }
