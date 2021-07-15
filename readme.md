@@ -108,6 +108,7 @@ EndDate              : 15-5-2021 01:05:27
 HoursPerWeek         : 40
 Company              : MyCoolCompany
 Department           : HR
+DepartmentExternalId : 3
 CostCenter           : HR
 ContractGuid         : 859bd885-3eb7-4acc-957a-07bf8054ec7f
 ```
@@ -164,6 +165,7 @@ EndDate              : 15-5-2021 01:05:27
 HoursPerWeek         : 40
 Company              : DemoCompany
 Department           : HR
+DepartmentExternalId : 3
 CostCenter           : HR
 ContractGuid         : 859bd885-3eb7-4acc-957a-07bf8054ec7f
 ```
@@ -201,6 +203,10 @@ ExternalId DisplayName ManagerExternalId
 Converts a stuntman to a HelloID person object. 
 
 ## Release history
+
+### Version 2.0.1
+
+- Solved bug where a department couldn't be linked to a user due to a missing DepartmentExternalId
 
 ### Version 2.0.0
 
