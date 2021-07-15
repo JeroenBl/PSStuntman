@@ -111,7 +111,7 @@ namespace PSStuntman.Cmdlets
                 if (isCreateDepartments)
                 {
                     WriteVerbose("Creating departments for use in HelloID");
-                    departments = _departmentService.CreateDepartments(stuntmam);
+                    departments = _departmentService.CreateDepartmentsAndAssignManager(stuntmam);
                 }
 
                 if (isSaveToDatabase)
@@ -129,14 +129,14 @@ namespace PSStuntman.Cmdlets
             }
             catch (Exception ex)
             {
-                WriteError(new ErrorRecord(ex, "Could not create stuntman", ErrorCategory.InvalidOperation, null));
+                WriteError(new ErrorRecord(ex, "Could not create stuntman", ErrorCategory.NotSpecified, null));
             }
         }
 
         public void SaveStuntmanToDatabase(List<StuntmanModel> persons)
         {
-            var query = "insert into Stuntman (UserId, ExternalId, GivenName, FamilyName, DisplayName, UserName, Initials, PersonalEmailAddress, PersonalPhoneNumber, BusinessEmailAddress, BusinessPhoneNumber, BirthDate, BirthPlace, Language, City, Street, HouseNumber, ZipCode, IsActive, UserGuid, Title, IsManager, StartDate, EndDate, HoursPerWeek, Company, Department, CostCenter, ContractGuid) " +
-            "values (@UserId, @ExternalId, @GivenName, @FamilyName, @DisplayName, @UserName, @Initials, @PersonalEmailAddress, @PersonalPhoneNumber, @BusinessEmailAddress, @BusinessPhoneNumber, @BirthDate, @BirthPlace, @Language, @City, @Street, @HouseNumber, @ZipCode, @IsActive, @UserGuid, @Title, @IsManager, @StartDate, @EndDate, @HoursPerWeek, @Company, @Department, @CostCenter, @ContractGuid)";
+            var query = "insert into Stuntman (UserId, ExternalId, GivenName, FamilyName, DisplayName, UserName, Initials, PersonalEmailAddress, PersonalPhoneNumber, BusinessEmailAddress, BusinessPhoneNumber, BirthDate, BirthPlace, Language, City, Street, HouseNumber, ZipCode, IsActive, UserGuid, Title, IsManager, StartDate, EndDate, HoursPerWeek, Company, Department, DepartmentExternalId, CostCenter, ContractGuid) " +
+            "values (@UserId, @ExternalId, @GivenName, @FamilyName, @DisplayName, @UserName, @Initials, @PersonalEmailAddress, @PersonalPhoneNumber, @BusinessEmailAddress, @BusinessPhoneNumber, @BirthDate, @BirthPlace, @Language, @City, @Street, @HouseNumber, @ZipCode, @IsActive, @UserGuid, @Title, @IsManager, @StartDate, @EndDate, @HoursPerWeek, @Company, @Department, @DepartmentExternalId, @CostCenter, @ContractGuid)";
 
             _sqliteDataAccessService.AddToDatabase(query, persons);
         }
